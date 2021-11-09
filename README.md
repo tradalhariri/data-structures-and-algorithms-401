@@ -8,7 +8,9 @@
 | Array Binary Search    | [Array Binary Search](./array-binary-search/README.md) |  
 | Linked List            | [Linked List](./linked-list/README.md)                 | 
 | Linked List Insertion  | [Linked List Insertion](./linked-list-insertions/README.md)      | 
-| Linked List Kth        | [Linked List kth](./linked-list-kth/README.md)      |   
+| Linked List Kth        | [Linked List kth](./linked-list-kth/README.md)      | 
+| linked-list-zip        | [linked-list-zip](./linked-list-zip/README.md)      |   
+
 
 
 
