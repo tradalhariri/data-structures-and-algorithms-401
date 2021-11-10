@@ -123,32 +123,8 @@ class LinkedList:
             count+=1
             current = current.next
         return self.kthFromEnd(count//2)
-    @staticmethod 
-    def zipLists(first,second):
-        if first.head == None:
-            return second
-        currentFirst = first.head
-        currentSecond = second.head
-        while (currentFirst != None):
-            if currentSecond !=None:
-                
-                if currentFirst.next == None:
-                    currentFirst.next = currentSecond
-                    break
-
-                temp = currentSecond.next
-                currentSecond.next = currentFirst.next
-                currentFirst.next = currentSecond
-                currentSecond = temp
-                currentFirst = currentFirst.next.next
-            else:
-                break
-            
-                
-        return first
+    
                   
-
-
     def getCollection(self):
         current = self.head
         collection = []
@@ -173,22 +149,6 @@ if __name__ == "__main__":
     print(f"the fourth node from the end is equal {ll.kthFromEnd(3)}")
     print(ll.__str__())
 
-
-    first  = LinkedList()
-    first.append(1)
-    first.append(3)
-    first.append(2)
-    first.append(10)
-    second = LinkedList()
-    second.append(5)
-    second.append(9)
-    second.append(4)
-    second.append(2)
-    # second.append(10)
-    # second.append(20)
-    third = LinkedList.zipLists(first, second)
-    print(third.__str__())
-    # print (ll.getCollection())
 
 
 
