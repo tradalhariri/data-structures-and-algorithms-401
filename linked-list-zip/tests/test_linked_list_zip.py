@@ -1,5 +1,6 @@
 from linked_list_zip import __version__
 from linked_list_zip.linked_list import LinkedList
+from linked_list_zip.zip_two_lists import *
 
 
 def test_version():
@@ -19,7 +20,7 @@ def test_zip_two_linked_lists_are_equal_in_length():
     second.append(2)
 
     expected = "{1} -> {5} -> {3} -> {9} -> {2} -> {4} -> {10} -> {2} -> NULL"
-    actual = LinkedList.zipLists(first, second).__str__()
+    actual = zip_Lists(first, second).__str__()
     assert actual == expected
 
 def test_zip_two_linked_lists_first_less_than_second_in_length():
@@ -33,7 +34,7 @@ def test_zip_two_linked_lists_first_less_than_second_in_length():
     second.append(2)
 
     expected = "{1} -> {5} -> {3} -> {9} -> {4} -> {2} -> NULL"
-    actual = LinkedList.zipLists(first, second).__str__()
+    actual = zip_Lists(first, second).__str__()
     assert actual == expected
 
 def test_zip_two_linked_lists_second_less_than_first_in_length():
@@ -48,7 +49,7 @@ def test_zip_two_linked_lists_second_less_than_first_in_length():
 
 
     expected = "{1} -> {5} -> {3} -> {9} -> {2} -> {10} -> NULL"
-    actual = LinkedList.zipLists(first, second).__str__()
+    actual = zip_Lists(first, second).__str__()
     assert actual == expected
 
 def test_zip_two_linked_lists_first_empty():
@@ -59,7 +60,7 @@ def test_zip_two_linked_lists_first_empty():
 
 
     expected = "{5} -> {9} -> NULL"
-    actual = LinkedList.zipLists(first, second).__str__()
+    actual = zip_Lists(first, second).__str__()
     assert actual == expected
 
 def test_zip_two_linked_lists_second_empty():
@@ -69,14 +70,14 @@ def test_zip_two_linked_lists_second_empty():
     first.append(2)
     second = LinkedList()
     expected = "{1} -> {3} -> {2} -> NULL"
-    actual = LinkedList.zipLists(first, second).__str__()
+    actual = zip_Lists(first, second).__str__()
     assert actual == expected
 
 def test_zip_two_linked_lists_two_empty():
     first = LinkedList()
     second = LinkedList()
     expected = "NULL"
-    actual = LinkedList.zipLists(first, second).__str__()
+    actual = zip_Lists(first, second).__str__()
     assert actual == expected
 
 def test_zip_two_linked_lists_first_one_node():
@@ -86,7 +87,7 @@ def test_zip_two_linked_lists_first_one_node():
     second.append(5)
     second.append(6)
     expected = "{10} -> {5} -> {6} -> NULL"
-    actual = LinkedList.zipLists(first, second).__str__()
+    actual = zip_Lists(first, second).__str__()
     assert actual == expected
 
 def test_zip_two_linked_lists_second_one_node():
@@ -96,7 +97,7 @@ def test_zip_two_linked_lists_second_one_node():
     second = LinkedList()
     second.append(5)
     expected = "{10} -> {5} -> {6} -> NULL"
-    actual = LinkedList.zipLists(first, second).__str__()
+    actual = zip_Lists(first, second).__str__()
     assert actual == expected
 
 def test_zip_two_linked_lists_two_have_one_node():
@@ -105,5 +106,5 @@ def test_zip_two_linked_lists_two_have_one_node():
     second = LinkedList()
     second.append(5)
     expected = "{10} -> {5} -> NULL"
-    actual = LinkedList.zipLists(first, second).__str__()
+    actual = zip_Lists(first, second).__str__()
     assert actual == expected
