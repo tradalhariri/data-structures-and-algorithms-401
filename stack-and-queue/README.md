@@ -16,6 +16,7 @@ Implement the core methods on both Stack and Queue classes and write tests for t
   - peek
   - is_empty
 
+----
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 * Stack 
