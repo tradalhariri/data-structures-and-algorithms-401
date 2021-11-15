@@ -12,6 +12,8 @@
 | linked-list-zip        | [linked-list-zip](./linked-list-zip/README.md)      |
 | Stack And Queue        | [stack-and-queue](./stack-and-queue/README.md)      |
 | Pseudo Queue           | [Pseudo Queue ](./stack-and-queue/stack_and_queue/stack_queue_pseudo/README.md)      |
+| stack queue animal shelter| [stack queue animal shelter](./stack-and-queue/stack_and_queue/stack_queue_animal_shelter/README.md)|
+
 
 
 
