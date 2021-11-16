@@ -14,6 +14,8 @@
 | Pseudo Queue           | [Pseudo Queue ](./stack-and-queue/stack_and_queue/stack_queue_pseudo/README.md)      |
 | stack queue animal shelter| [stack queue animal shelter](./stack-and-queue/stack_and_queue/stack_queue_animal_shelter/README.md)|
 
+|Validate Brackets in String| [Validate Brackets in String](./stack-and-queue/stack_and_queue/stack_queue_brackets/README.md)|
+
 
 
 
