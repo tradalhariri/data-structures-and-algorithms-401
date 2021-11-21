@@ -1,4 +1,6 @@
 from trees.node import Node
+from collections import deque
+ 
 class BinaryTree:
 
     def __init__(self,root = None):
@@ -58,8 +60,35 @@ class BinaryTree:
             return tree_output
 
         return _travers_post(self.root)
-        
 
+    def max_value(self):
+        stack = deque()
+        stack.append(self.root)
+        max_value  = self.root.value
+
+        while stack:
+            current = stack.pop()
+            if current.value > max_value:
+                max_value = current.value
+            if current.right:
+                stack.append(current.right)
+            if current.left:
+                stack.append(current.left)
+        return max_value
+            
+        
+def binary_tree_2():
+    binary_tree = BinaryTree()
+    binary_tree.root = Node(2)
+    binary_tree.root.left = Node(7)
+    binary_tree.root.right = Node(5)
+    binary_tree.root.right.right = Node(9)
+    binary_tree.root.right.right.left = Node(4)
+    binary_tree.root.left.left = Node(2)
+    binary_tree.root.left.right = Node(6)
+    binary_tree.root.left.right.left = Node(5)
+    binary_tree.root.left.right.right = Node(11)
+    return binary_tree
 
 def create_tree():
     tree=BinaryTree("A")
@@ -75,5 +104,7 @@ if __name__ == "__main__":
     print(tree.pre_order())
     print(tree.in_order())
     print(tree.post_order())
+    tree_2 = binary_tree_2()
+    print(tree_2.max_value())
     # travers_pre = tree.pre_order()
     # print(travers_pre(tree.root)) 
