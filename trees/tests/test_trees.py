@@ -81,7 +81,14 @@ def test_pre_order_binary_tree_raise_exception_when_tree_is_empty():
     binary_tree = BinaryTree()
     with pytest.raises(Exception):
         binary_tree.pre_order()
+
+def test_binary_tree_max_value_correct(binary_tree_2):
+    assert binary_tree_2.max_value() == 11
         
+def test_binary_tree_max_value_failure(binary_tree_2):
+    assert binary_tree_2.max_value() != 5
+        
+
   
 @pytest.fixture
 def binary_tree():
@@ -105,3 +112,17 @@ def binary_search_tree():
     binary_search_tree.add(600)
 
     return binary_search_tree
+
+@pytest.fixture
+def binary_tree_2():
+    binary_tree = BinaryTree()
+    binary_tree.root = Node(2)
+    binary_tree.root.left = Node(7)
+    binary_tree.root.right = Node(5)
+    binary_tree.root.right.right = Node(9)
+    binary_tree.root.right.right.left = Node(4)
+    binary_tree.root.left.left = Node(2)
+    binary_tree.root.left.right = Node(6)
+    binary_tree.root.left.right.left = Node(5)
+    binary_tree.root.left.right.right = Node(11)
+    return binary_tree
