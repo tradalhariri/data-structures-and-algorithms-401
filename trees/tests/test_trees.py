@@ -3,6 +3,7 @@ from trees.binary_tree import BinaryTree
 from trees.binary_search_tree import BinarySearchTree
 from trees.node import Node
 
+from trees.tree_breadth_first.tree_breadth_first import breadth_first
 import pytest
 
 def test_version():
@@ -89,7 +90,22 @@ def test_binary_tree_max_value_failure(binary_tree_2):
     assert binary_tree_2.max_value() != 5
         
 
-  
+def test_breadth_first_empty_tree():
+    binary_tree = BinaryTree()
+    with pytest.raises(Exception):
+        breadth_first(binary_tree)
+
+def test_breadth_first_tree_one_element():
+    binary_tree = BinaryTree()
+    binary_tree.root = Node(2)
+    assert breadth_first(binary_tree) == [2]
+
+def test_breadth_first(binary_tree_2):
+    assert breadth_first(binary_tree_2) == [2,7,5,2,6,9,5,11,4]
+
+def test_breadth_first(binary_tree_2):
+    assert breadth_first(binary_tree_2) != [2,7,5,2,6,9,5,4,11]
+
 @pytest.fixture
 def binary_tree():
     binary_tree = BinaryTree("A")
