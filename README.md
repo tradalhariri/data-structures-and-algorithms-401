@@ -19,6 +19,8 @@
 |Trees Implementaion| [Trees Implementaion](./trees/README.md)|
 |Tree Max           | [Tree Max ](./trees/trees/max_tree/README.md)|
 |Tree Breadth First           | [Tree Breadth First ](./trees/trees/tree_breadth_first/README.md)|
+|Tree Fizz Buzz           | [Tree Fizz Buzz ](./trees/trees/tree_fizz_buzz/README.md)|
+
 
 
 
