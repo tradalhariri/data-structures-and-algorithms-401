@@ -19,6 +19,8 @@
 |Tree Breadth First           | [Tree Breadth First ](./trees/trees/tree_breadth_first/README.md)|
 |Tree Fizz Buzz           | [Tree Fizz Buzz ](./trees/trees/tree_fizz_buzz/README.md)|
 |Insertion Sort           | [Insertion Sort  ](./insertion-sort/README.md)|
+|Merge Sort           | [Merge Sort  ](./merge-sort/README.md)|
+
 
 
 
