@@ -20,6 +20,8 @@
 |Tree Fizz Buzz           | [Tree Fizz Buzz ](./trees/trees/tree_fizz_buzz/README.md)|
 |Insertion Sort           | [Insertion Sort  ](./insertion-sort/README.md)|
 |Merge Sort           | [Merge Sort  ](./merge-sort/README.md)|
+|Quick Sort           | [Quick Sort   ](./quick-sort/README.md)|
+
 
 
 
