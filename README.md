@@ -22,6 +22,9 @@
 |Merge Sort           | [Merge Sort  ](./merge-sort/README.md)|
 |Quick Sort           | [Quick Sort   ](./quick-sort/README.md)|
 |HashTable           | [HashTable   ](./hash-table/README.md)|
+|Hashmap Repeated Word           | [Hashmap Repeated Word   ](./hash-table/hash_table/hashmap_repeated_word/README.md)|
+
+
 
 
 
