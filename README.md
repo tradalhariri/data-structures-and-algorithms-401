@@ -23,7 +23,7 @@
 |Quick Sort           | [Quick Sort   ](./quick-sort/README.md)|
 |HashTable           | [HashTable   ](./hash-table/README.md)|
 |Hashmap Repeated Word           | [Hashmap Repeated Word   ](./hash-table/hash_table/hashmap_repeated_word/README.md)|
-
+|Tree Intersection | [Tree Intersection ](./hash-table/hash_table/tree_intersection/README.md)|
 
 
 
