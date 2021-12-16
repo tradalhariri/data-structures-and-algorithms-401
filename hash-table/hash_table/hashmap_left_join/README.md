@@ -20,7 +20,7 @@ The second parameter is a hashmap that has word strings as keys, and antonyms of
         - else  append the key and value for the node along side with None as list to the result
 5. return result
 
-***Time Complexity*** is O(N) because we iterate over each index in the first hashmap
+***Time Complexity*** is O(N^4) because we iterate over each index in the first hashmap and in the worst case it might all the keys may exist in the same index and also to check if the key exist in the second hashmap we need also N in worst case and also to get the value from second hashmap we need N 
 
 ***Space Complexity*** is O(N) because we used auxiliary data structure to store the result.
 
