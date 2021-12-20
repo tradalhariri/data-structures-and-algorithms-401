@@ -1,6 +1,6 @@
 from graph import __version__
 from graph.graph import Graph,Vertex,Edge
-
+from graph.bussiness_trip import business_trip
 import pytest
 
 def test_version():
@@ -104,6 +104,11 @@ def test_breadth_first_not_visit_all_nodes_if_it_is_disconnected(graph2):
     graph2[0].add_edge(a, b)
     assert graph2[0].breadth_first(a) == [a,b]
 
+
+def test_bussines_trip_valid(graph3):
+      assert business_trip( graph3[0],[graph3[1][0],graph3[1][1]]) == (True,"$82")
+
+
     
 @pytest.fixture
 def graph():
@@ -138,3 +143,35 @@ def graph2():
       graph.add_edge(naboo,metroville)
       graph.add_edge(naboo,monstroplolis)
       return (graph,[pandora,arendelle,metroville,monstroplolis,narnia,naboo,])
+  
+
+@pytest.fixture
+def graph3():
+      graph = Graph()
+      pandora = graph.add_node("Pandora")
+      arendelle = graph.add_node("Arendelle")
+      metroville = graph.add_node("Metroville")
+      monstroplolis = graph.add_node("Monstroplolis")
+      narnia = graph.add_node("Narnia")
+      naboo = graph.add_node("Naboo")
+      
+      graph.add_edge(pandora, arendelle,150)
+      graph.add_edge(pandora, metroville,82)
+
+      graph.add_edge(arendelle,pandora,150)
+      graph.add_edge(arendelle,metroville,99)
+      graph.add_edge(arendelle,monstroplolis,42)
+      graph.add_edge(metroville,arendelle,99)
+      graph.add_edge(metroville,monstroplolis,105)
+      graph.add_edge(metroville,pandora,82)
+      graph.add_edge(metroville,narnia,37)
+      graph.add_edge(metroville,naboo,26)
+      graph.add_edge(monstroplolis,arendelle,42)
+      graph.add_edge(monstroplolis,metroville,105)
+      graph.add_edge(monstroplolis,naboo,73)
+      graph.add_edge(narnia,metroville,37)
+      graph.add_edge(narnia,naboo,250)
+      graph.add_edge(naboo,narnia,250)
+      graph.add_edge(naboo,metroville,26)
+      graph.add_edge(naboo,monstroplolis,73)
+      return (graph,[metroville,pandora])

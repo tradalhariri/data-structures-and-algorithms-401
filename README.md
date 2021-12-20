@@ -27,6 +27,8 @@
 |Left Join Hashmaps | [Left Join Hashmaps ](./hash-table/hash_table/hashmap_left_join/README.md)|
 |Graph | [Graph ](./graph/README.md)|
 |Graph Braedth First | [Graph Braedth First ](./graph/graph/graph_breadth_first/README.md)|
+|Graph Business Trip | [Graph Business Trip ](./graph/graph/graph_business_trip/README.md)|
+
 
 
 

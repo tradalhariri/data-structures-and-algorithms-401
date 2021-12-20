@@ -91,6 +91,20 @@ class Graph:
   def get_neighbors(self, vertex):
     return self.__adj_list.get(vertex, [])
   
+  # def get_neighbors_names(self,vertex_name):
+  #       keys = self.__adj_list.keys()
+  #       names = []
+  #       for key in keys:
+  #             if key.value == vertex_name:
+  #                   names = self.__adj_list.get(key, [])
+  #       if len(names):    
+  #         names = [city_name.vertex.value for city_name in names ]           
+  #         names.insert(0, vertex_name)
+  #       return names
+    
+        
+        
+        
   
 
   """
@@ -149,25 +163,28 @@ if __name__ == "__main__":
       narnia = graph.add_node("Narnia")
       naboo = graph.add_node("Naboo")
       
-      graph.add_edge(pandora, arendelle)
-      graph.add_edge(arendelle,pandora)
-      graph.add_edge(arendelle,metroville)
-      graph.add_edge(arendelle,monstroplolis)
-      graph.add_edge(metroville,arendelle)
-      graph.add_edge(metroville,monstroplolis)
-      graph.add_edge(metroville,narnia)
-      graph.add_edge(metroville,naboo)
-      graph.add_edge(monstroplolis,arendelle)
-      graph.add_edge(monstroplolis,metroville)
-      graph.add_edge(monstroplolis,naboo)
-      graph.add_edge(narnia,metroville)
-      graph.add_edge(narnia,naboo)
-      graph.add_edge(naboo,narnia)
-      graph.add_edge(naboo,metroville)
-      graph.add_edge(naboo,monstroplolis)
+      graph.add_edge(pandora, arendelle,150)
+      graph.add_edge(pandora, metroville,82)
+
+      graph.add_edge(arendelle,pandora,150)
+      graph.add_edge(arendelle,metroville,99)
+      graph.add_edge(arendelle,monstroplolis,42)
+      graph.add_edge(metroville,arendelle,99)
+      graph.add_edge(metroville,monstroplolis,105)
+      graph.add_edge(metroville,pandora,82)
+      graph.add_edge(metroville,narnia,37)
+      graph.add_edge(metroville,naboo,26)
+      graph.add_edge(monstroplolis,arendelle,42)
+      graph.add_edge(monstroplolis,metroville,105)
+      graph.add_edge(monstroplolis,naboo,73)
+      graph.add_edge(narnia,metroville,37)
+      graph.add_edge(narnia,naboo,250)
+      graph.add_edge(naboo,narnia,250)
+      graph.add_edge(naboo,metroville,26)
+      graph.add_edge(naboo,monstroplolis,73)
       
       print(graph.breadth_first(pandora))
-      
+      print(graph,[metroville,pandora])
       ## 
       # a = Vertex("a")
       # print(graph.breadth_first(a))
