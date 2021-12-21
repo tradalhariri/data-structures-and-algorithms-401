@@ -109,6 +109,24 @@ def test_bussines_trip_valid(graph3):
       assert business_trip( graph3[0],[graph3[1][0],graph3[1][1]]) == (True,"$82")
 
 
+
+
+def test_depth_first_start_node_not_in_graph(graph4):
+    l = Vertex("l")
+    with pytest.raises(KeyError):
+        graph4[0].depth_first(l)
+        
+def test_depth_first_return_list(graph4):
+    assert graph4[0].depth_first(graph4[1][0]) == [node for node in graph4[1]]
+
+def test_depth_first_not_visit_all_nodes_if_it_is_disconnected(graph4):
+    l = graph4[0].add_node("l")
+    k = graph4[0].add_node("k")
+
+    graph4[0].add_edge(l, k)
+    assert graph4[0].depth_first(l) == [l,k]
+
+
     
 @pytest.fixture
 def graph():
@@ -175,3 +193,37 @@ def graph3():
       graph.add_edge(naboo,metroville,26)
       graph.add_edge(naboo,monstroplolis,73)
       return (graph,[metroville,pandora])
+  
+@pytest.fixture
+def graph4():
+      graph3 = Graph()
+      a =graph3.add_node("A")
+      b =graph3.add_node("B")
+      c =graph3.add_node("C")
+      g = graph3.add_node("G")
+      d = graph3.add_node("D")
+      e = graph3.add_node("E")
+      f = graph3.add_node("F")
+      h = graph3.add_node("H")
+      
+      graph3.add_edge(a,b)
+      graph3.add_edge(b,a)
+      graph3.add_edge(a,d)
+      graph3.add_edge(d,a)
+      graph3.add_edge(b,c)
+      graph3.add_edge(b,d)
+      graph3.add_edge(d,b)
+     
+      graph3.add_edge(c,b)
+      graph3.add_edge(c,g)
+      graph3.add_edge(g,c)
+      graph3.add_edge(d,e)
+      graph3.add_edge(f,d)
+      graph3.add_edge(d,h)
+      graph3.add_edge(h,d)
+     
+      graph3.add_edge(e,d)
+      graph3.add_edge(d,f)
+      graph3.add_edge(f,h)
+      graph3.add_edge(h,f)
+      return (graph3,[a,b,c,g,d,e,h,f])
