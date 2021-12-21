@@ -13,6 +13,8 @@ class Queue:
   
   def __len__(self):
     return len(self.dq)
+  
+
 
 class Vertex:
   """
@@ -153,6 +155,41 @@ class Graph:
 
     return result
   
+    """
+  Input : Vertex
+  What is doing: Traverse the graph in pre-order depth-first  starting from input vertex
+  Return: A list of all visited vertices in pre order
+  """
+  def depth_first(self, start_vertex):
+    if start_vertex not in self.get_nodes():
+          raise KeyError("This node not added to the graph")
+    stack = []
+    result = []
+    visited = set()
+     
+    stack.append(start_vertex)
+    while stack:
+      current_vertex = stack[-1]
+      if current_vertex not in visited:
+        visited.add(current_vertex)
+        result.append(current_vertex)
+
+      neighbors = self.get_neighbors(current_vertex)
+      all_neighbors_visited = True
+
+            
+      for edge in neighbors:
+          neighbor = edge.vertex
+          if neighbor not in visited:
+              stack.append(neighbor)
+              all_neighbors_visited = False   
+
+              break
+      if all_neighbors_visited:
+            stack.pop()
+    return result
+
+  
 
 if __name__ == "__main__":
       graph = Graph()
@@ -185,6 +222,41 @@ if __name__ == "__main__":
       
       print(graph.breadth_first(pandora))
       print(graph,[metroville,pandora])
+      
+      graph1 = Graph()
+      a =graph1.add_node("A")
+      b =graph1.add_node("B")
+      c =graph1.add_node("C")
+      g = graph1.add_node("G")
+      d = graph1.add_node("D")
+      e = graph1.add_node("E")
+      f = graph1.add_node("F")
+      h = graph1.add_node("H")
+      
+      graph1.add_edge(a,b)
+      graph1.add_edge(b,a)
+      graph1.add_edge(a,d)
+      graph1.add_edge(d,a)
+      graph1.add_edge(b,c)
+      graph1.add_edge(b,d)
+      graph1.add_edge(d,b)
+     
+      graph1.add_edge(c,b)
+      graph1.add_edge(c,g)
+      graph1.add_edge(g,c)
+      graph1.add_edge(d,e)
+      graph1.add_edge(f,d)
+      graph1.add_edge(d,h)
+      graph1.add_edge(h,d)
+     
+      graph1.add_edge(e,d)
+      graph1.add_edge(d,f)
+      graph1.add_edge(f,h)
+      graph1.add_edge(h,f)
+      
+      print(graph1.depth_first(a))
+
+
       ## 
       # a = Vertex("a")
       # print(graph.breadth_first(a))
